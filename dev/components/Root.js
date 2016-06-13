@@ -15,7 +15,7 @@ export default class Root extends React.Component {
   }
 
   _handleOptionClick(option) {
-    this.setState({option: option})
+    this.setState({option: option});
   }
 
   _getCurrentTime() {
@@ -28,9 +28,17 @@ export default class Root extends React.Component {
   }
 
   componentWillUnmount(){
-    window.cancelRequestAnimationFrame(this.requestCurrentTimeId);
+    window.cancelAnimationFrame(this.requestCurrentTimeId);
   }
 
+  toggleClass(className){
+    if(this.state.option === className){
+      return className + " selected";
+    }
+    else{
+      return className
+    }
+  }
 
   render() {
     let option = this.state.option;
@@ -38,12 +46,12 @@ export default class Root extends React.Component {
     if (option == 'clock') {
       element = <Clock currentTime={this.state.currentTime}/>
     }
+
     return (
       <main>
         <div className='option-buttons'>
-          <button onClick={this._handleOptionClick.bind(this, 'clock')}>Clock</button>
-          <button>Stopwatch</button>
-          <button>Alarm</button>
+          <button className={this.toggleClass('clock')} onClick={this._handleOptionClick.bind(this, 'clock')}>Clock</button>
+          <button className={this.toggleClass('stopwatch')} onClick={this._handleOptionClick.bind(this, 'stopwatch')} >Stopwatch</button>
         </div>
         {element}
       </main>

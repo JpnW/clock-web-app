@@ -1,0 +1,51 @@
+body {
+  background-color: #e9e9e9;
+  color: #fff;
+  main {
+    margin: 100px auto;
+    background: #000;
+    width: 500px;
+    .option-buttons {
+      font-size: 18px;
+      width: 100%;
+      > button {
+        width: 50%;
+        padding: 10px;
+        color: #fff;
+        background: #555;
+        &:hover {
+          background: #333;
+          cursor: pointer;
+        }
+        &:active {
+          background: #222;
+        }
+      }
+      > button.selected {
+        background: #f55;
+      }
+    }
+    .analog-container {
+      width: 60%;
+      margin: 20px 20%;
+      .circle {
+        fill: #fff;
+      }
+      .hr, .min, .sec {
+        stroke-width: 1px;
+        fill: #333;
+        stroke: #555;
+      }
+      .sec {
+        stroke: #f55;
+      }
+    }
+    .digital-time {
+      text-align: center;
+      padding-bottom: 20px;
+      font-size: 40px;
+    }
+
+  }
+}
+

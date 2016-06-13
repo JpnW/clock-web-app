@@ -1,5 +1,6 @@
 import React from 'react';
 import {formatTime} from '../utils.js';
+import Analog from './Analog.js';
 
 export default class Clock extends React.Component{
   constructor(props){
@@ -10,7 +11,8 @@ export default class Clock extends React.Component{
   render(){
     return (
       <div>
-        <h1>{formatTime(this.props.currentTime)}</h1>
+        <Analog currentTime ={this.props.currentTime}/>
+        <h1 className='digital-time'>{formatTime(this.props.currentTime)}</h1>
       </div>
     )
   }
