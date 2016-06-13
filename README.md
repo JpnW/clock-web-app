@@ -14,3 +14,6 @@ To run:
 open build/index.html
 ```
 open your browser at localhost:2016
+
+This app is statically hosted by github at:
+http://JpnW.github.io/clock-web-app
