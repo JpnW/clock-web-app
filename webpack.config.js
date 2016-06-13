@@ -1,7 +1,7 @@
 'use strict';
 var webpack = require('webpack');
 var ORIGIN = __dirname + '/dev';
-var APP = __dirname ;
+var APP = __dirname + '/build' ;
 
 module.exports = {
   module:{
