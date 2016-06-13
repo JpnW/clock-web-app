@@ -10,10 +10,10 @@ export default class Clock extends React.Component{
 
   render(){
     return (
-      <div>
+      <section className='clock'>
         <Analog currentTime ={this.props.currentTime}/>
-        <h1 className='digital-time'>{formatTime(this.props.currentTime)}</h1>
-      </div>
+        <h1>{formatTime(this.props.currentTime)}</h1>
+      </section>
     )
   }
 }

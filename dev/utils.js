@@ -11,6 +11,22 @@ export function formatTime(){
   return `${hr}:${min}:${sec} ${ampm}`;
 }
 
+export function formatStopwatch(num){
+  let d = new Date(num);
+  let millsec = d.getMilliseconds();
+  let sec = d.getSeconds();
+  let min = d.getMinutes();
+  if (millsec < 100 && millsec >= 10) {
+    millsec = '0' + millsec;
+  } else if (millsec <10){
+    millsec = '00' + millsec
+  }
+  sec = sec < 10 ? '0' + sec : sec;
+  min = min < 10 ? '0' + min : min;
+  return `${min}:${sec}:${millsec}`;
+}
+
 export default {
-  formatTime : formatTime
+  formatTime : formatTime,
+  formatStopwatch : formatStopwatch
 }

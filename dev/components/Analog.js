@@ -9,7 +9,7 @@ export default class Analog extends React.Component {
 
   _getAnalogUpdate() {
     let repeat = (el, deg)=> {
-      document.getElementsByClassName(el)[0].setAttribute('transform', `rotate(${deg} 50 50)`)
+      this.refs[el].setAttribute('transform', `rotate(${deg} 50 50)`)
     };
     let currentTime = this.props.currentTime;
     let hr = currentTime.getHours();
@@ -40,9 +40,9 @@ export default class Analog extends React.Component {
         <svg className='analog' viewBox='0 0 100 100'>
           <circle className='circle' cx='50' cy='50' r='45'/>
           <g>
-            <rect className='hr' x='47.5' y='12.5' width='5' height='40' rx='2.5' ry='2.55'/>
-            <rect className='min' x='48.5' y='12.5' width='3' height='40' rx='2' ry='2'/>
-            <line className='sec' x1='50' y1='50' x2='50' y2='16'/>
+            <rect ref='hr' className='hr' x='47.5' y='12.5' width='5' height='40' rx='2.5' ry='2.55'/>
+            <rect ref='min' className='min' x='48.5' y='12.5' width='3' height='40' rx='2' ry='2'/>
+            <line ref='sec' className='sec' x1='50' y1='50' x2='50' y2='16'/>
           </g>
         </svg>
       </div>

@@ -1,51 +1,91 @@
+$black: #000;
+$white: #fff;
+$red: #f55;
+$light-grey: #d3d3d3;
+$mid-grey: #555;
+$dark-grey: #333;
+$darkest-grey: #222;
+
+
+
 body {
-  background-color: #e9e9e9;
+  background-color: $light-grey;
   color: #fff;
   main {
     margin: 100px auto;
-    background: #000;
+    background: $black;
     width: 500px;
     .option-buttons {
-      font-size: 18px;
+      font-size: 22px;
       width: 100%;
       > button {
         width: 50%;
-        padding: 10px;
-        color: #fff;
-        background: #555;
+        padding: 20px;
+        color: $white;
+        background: $mid-grey;
         &:hover {
-          background: #333;
+          background: $dark-grey;
           cursor: pointer;
         }
         &:active {
-          background: #222;
+          background: $darkest-grey;
         }
       }
       > button.selected {
-        background: #f55;
+        background: $red;
       }
     }
-    .analog-container {
-      width: 60%;
-      margin: 20px 20%;
-      .circle {
-        fill: #fff;
+    .clock{
+      .analog-container {
+        width: 60%;
+        margin: 20px 20%;
+        .circle {
+          fill: $white;
+        }
+        .hr, .min, .sec {
+          stroke-width: 1px;
+          fill: $dark-grey;
+          stroke: $mid-grey;
+        }
+        .sec {
+          stroke: $red;
+        }
       }
-      .hr, .min, .sec {
-        stroke-width: 1px;
-        fill: #333;
-        stroke: #555;
+      > h1 {
+        text-align: center;
+        padding-bottom: 30px;
+        font-size: 40px;
       }
-      .sec {
-        stroke: #f55;
-      }
-    }
-    .digital-time {
-      text-align: center;
-      padding-bottom: 20px;
-      font-size: 40px;
     }
 
+    .stopwatch{
+      > h1 {
+        font-size: 88px;
+        text-align: center;
+      }
+      .stopwatch-buttons {
+        margin: 0 auto;
+        width: 300px;
+        >button {
+          font-size: 16px;
+          padding: 10px;
+          width: 150px;
+          margin-bottom: 50px;
+          background: $white;
+          &:hover {
+            background: $light-grey;
+            cursor: pointer;
+          }
+          &:active {
+            background: $mid-grey;
+          }
+        }
+        .disabled {
+          display: none;
+        }
+      }
+
+    }
   }
 }
 
